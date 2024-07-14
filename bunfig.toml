@@ -1,0 +1,2 @@
+name = "saninica-api"
+main = "src/index.ts"
