@@ -1,2 +1,2 @@
-name = "saninica-api"
+name = "example-api"
 main = "src/index.ts"

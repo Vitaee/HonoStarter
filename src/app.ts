@@ -1,12 +1,11 @@
 import { Hono } from 'hono';
-import { connectDB } from './db';
 import { userRouter } from './routes/user.router';
 import { errorHandler } from './middlewares/error.middleware';
 import { logger } from './middlewares/logger.middleware';
+//import './jobs/processors'; 
+
 
 const app = new Hono();
-
-connectDB();
 
 app.use('*', logger);
 
