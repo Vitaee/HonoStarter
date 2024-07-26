@@ -14,6 +14,7 @@ class Config {
 
   public readonly REDIS_HOST: string;
   public readonly REDIS_PORT: string;
+  public readonly REDIS_PASSWORD: string;
 
   public readonly DB_HOST: string;
   public readonly DB_PORT: string;
@@ -37,6 +38,7 @@ class Config {
     this.RESEND_API_KEY = process.env.RESEND_API_KEY;
     this.REDIS_HOST = process.env.REDIS_HOST;
     this.REDIS_PORT = process.env.REDIS_PORT;
+    this.REDIS_PASSWORD = process.env.REDIS_PASSWORD!;
     this.DB_HOST = process.env.DB_HOST;
     this.DB_PORT = process.env.DB_PORT;
     this.DB_DATABASE = process.env.DB_DATABASE;
