@@ -22,6 +22,8 @@ class Config {
   public readonly DB_USER: string;
   public readonly DB_PASS: string;
 
+  public readonly SERVER_PORT: string;
+
   private constructor() {
     if (!process.env.AWS_REGION || !process.env.AWS_ACCESS_KEY || !process.env.AWS_SECRET_KEY 
       || !process.env.AWS_BUCKET_NAME || !process.env.RESEND_API_KEY 
@@ -44,6 +46,7 @@ class Config {
     this.DB_DATABASE = process.env.DB_DATABASE;
     this.DB_USER = process.env.DB_USER;
     this.DB_PASS = process.env.DB_PASS;
+    this.SERVER_PORT = process.env.SERVER_PORT || '3000';
   }
 
   public static getInstance(): Config {

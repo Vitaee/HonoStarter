@@ -9,10 +9,10 @@ const startServer = async () => {
 
   Bun.serve({
     fetch: app.fetch,
-    port: Number(config.PORT || 3000),
+    port: config.SERVER_PORT,
   });
 
-  console.log(`Server running on http://localhost:${config.PORT || 3000}`);
+  console.log(`Server running on http://localhost:${config.SERVER_PORT}`);
 };
 
 startServer();
