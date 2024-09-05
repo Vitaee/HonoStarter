@@ -13,10 +13,10 @@ export const getAllUsers = async (c: Context) => {
 };
 
 
-export const createUser = async (c: Context) => {
+export const registerUser = async (c: Context) => {
   try {
-    const user = await userService.create(c.get('validatedBody'));
-    return sendResponse(c, true, user, null, 201);
+    const token = await userService.authorize(c.get('validatedBody'));
+    return sendResponse(c, true, token, null, 201);
   } catch (error: any) {
     return sendResponse(c, false, [], error.message, 500);
   }

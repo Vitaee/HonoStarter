@@ -1,11 +1,11 @@
 import { Hono } from 'hono';
-import { createUser, getAllUsers } from '../controllers/user.controller';
+import { registerUser, getAllUsers } from '../controllers/user.controller';
 import { validationMiddleware } from '../validations/body.validation';
-import { CreateUserDto } from '../dto/user.dto';
+import { CreateUserValidation } from '../validations/users/create.validation';
 
 const userRouter = new Hono();
 
 userRouter.get('/', getAllUsers);
-userRouter.post('/', validationMiddleware(CreateUserDto), createUser);
+userRouter.post('/', validationMiddleware(CreateUserValidation), registerUser);
 
 export { userRouter };

@@ -2,10 +2,10 @@ import { validate, ValidationError } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { validator } from 'hono/validator';
 
-export const validationMiddleware = (dtoClass: any) => {
+export const validationMiddleware = (validationClass: any) => {
   return validator('json', async (value, c) => {
     const body = value;
-    const input = plainToInstance(dtoClass, body);
+    const input = plainToInstance(validationClass, body);
     const errors = await validate(input);
 
     if (errors.length > 0) {
